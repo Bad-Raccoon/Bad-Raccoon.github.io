@@ -1,0 +1,391 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+
+
+body{
+  width: unset;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: url(https://images4.alphacoders.com/561/561441.jpg) no-repeat center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  overflow: overlay; /*Підтримують не всі браузери*/
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+  padding: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background: rgba(25, 34, 50, .65);
+  background-clip: padding-box;
+  border: 5px solid transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(25, 34, 50, .8);
+}
+/* ---------------------header----------------------------- */
+.header{
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* padding: 1rem 2rem; */
+  background: rgba(25, 34, 50, .65);
+  backdrop-filter: blur(100px);
+  color: #f1f1f1;
+}
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  /* background: rgba(25, 34, 50, .65); */
+  /* backdrop-filter: blur(10px); */
+  color: #f1f1f1;
+}
+.header-menu{
+  display: flex;
+  align-items: center;
+}
+.header-menu__image{
+  position: relative;
+  margin-left: 1rem;
+  font-size: 16px;
+  color: #f1f1f1;
+}
+.header-menu__image::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #f1f1f1;
+  transition: .35s;
+}
+.header-menu__image:hover::after{
+  left: 0;
+  width: 100%;
+}
+.header-menu__item{
+  position: relative;
+  margin-left: 1rem;
+  font-size: 16px;
+  color: #f1f1f1;
+}
+
+.header-menu__item::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #f1f1f1;
+  transition: .35s;
+}
+
+.header-menu__item:hover::after{
+  left: 0;
+  width: 100%;
+}
+
+.main{
+  padding: 0 2rem;
+}
+/* ---------Body---------- */
+.block{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-content{
+  display: flex;
+  width: 75vw;
+  max-height: 90vh;
+  padding: 1rem;
+  background: rgba(25, 34, 50, .65);
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
+  font-size: 17px;
+  color: #f1f1f1;
+}
+
+.block-left,
+.block-right{
+  width: 50%;
+  padding: 2rem;
+  overflow: auto;
+}
+
+.block-title{
+  margin: 0;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.block-title:first-child{
+  margin-top: 0;
+}
+
+.block-list{
+  padding-left: 3.5rem;
+}
+
+.block-list__item{
+  margin-bottom: 1rem;
+  list-style: disc;
+  line-height: 1.5;
+}
+
+.block-list__item:last-child{
+  margin-bottom: 0;
+}
+/* -----------------Tabs------------------------ */
+.tabs{
+  width: 100%;
+  display: flex;
+  /* padding: 10px; */
+}
+
+.tabs .block-left{
+  width: 30%;
+}
+
+.tabs .block-right{
+  width: 70%;
+  
+}
+.tabs__nav{
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs__nav-horizontal{
+  display: flex;
+  flex-direction: row;
+}
+
+button{
+  background: none;
+  color: #f1f1f1;
+}
+
+.tabs__nav-btn{
+  width: 100%;
+  margin: 0px 0px 1rem 0px;
+  padding: 1rem .5rem;
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  box-shadow: 0 0 .5rem rgba(233, 224, 207, .025);
+  font-size: 16px;
+}
+
+.tabs__nav-horizontal .tabs__nav-btn{
+  margin-left: 1rem;
+}
+
+.tabs__nav-horizontal .tabs__nav-btn:first-child{
+  margin-left: 0;
+}
+
+.tabs__nav-btn.active{
+  background: rgba(38, 51, 75, 1);
+}
+
+.tabs__item{
+  display: none;
+}
+
+.tabs__item--images{
+  margin: 0 -.5rem;
+}
+
+.tabs__item--image{
+  width: 30%;
+  width: calc(100% / 3 - 1.25rem);
+  height: 128px;
+  margin: 0rem .5rem 1rem .5rem;
+  object-fit: cover;
+  /* background: rgba(25, 34, 50, .3); */
+  background: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  cursor: pointer;
+}  
+
+.tabs__item.active{
+  display: block;
+}
+/* ---------------------Social networks--------------------- */
+
+
+.block-image{
+  max-width: 50%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+.format{
+  width: 100px;
+  height: 100px;
+}
+/* ----------------Adaptiv---------------- */
+.container{
+  max-width: 2000px;
+}
+@media (max-width: 1200px){
+  
+}
+
+.footer{
+  padding: 1rem;
+}
+
+/* file viewer */
+
+.file-viewer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+
+  display: none;
+  opacity: 0;
+  transition: .5s;
+  pointer-events: none;
+}
+
+.file-viewer-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(25, 34, 50, .65);
+  backdrop-filter: blur(15px);
+  z-index: 998;
+
+  display: none;
+  opacity: 0;
+  transition: .5s;
+}
+
+.file-viewer-content{
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+  transform: scale(1.1);
+  transition: .35s;
+  pointer-events: all;
+}
+
+.file-viewer-image{
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+}
+
+.file-viewer-tools{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.file-viewer-tools--close{
+  position: absolute;
+  right: 1rem;
+  font-family: 'Material Icons Round';
+  font-size: 36px;
+  background: none;
+  pointer-events: all;
+}
